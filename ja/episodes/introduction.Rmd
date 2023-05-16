@@ -1,44 +1,44 @@
 ---
-title: "Using RMarkdown"
+title: "RMarkdownの使い方"
 teaching: 10
 exercises: 2
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do you write a lesson using R Markdown and `{sandpaper}`?
+- R Markdown と `{sandpaper} `を使ってレッスンを書くにはどうすればいいですか？
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how to use markdown with the new lesson template
-- Demonstrate how to include pieces of code, figures, and nested challenge blocks
+- 新しいレッスンテンプレートにおいてマークダウンの使用方法を説明する
+- コード、図、ネストされたチャレンジブロックの使い方を説明すること
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction
+## はじめに
 
-This is a lesson created via The Carpentries Workbench.
-It is written in [Pandoc-flavored Markdown](https://pandoc.org/MANUAL.txt) for static files and [R Markdown][r-markdown] for dynamic files that can render code into output.
-Please refer to the [Introduction to The Carpentries Workbench](https://carpentries.github.io/sandpaper-docs/) for full documentation.
+これはThe Carpenties Workbenchによって作成されたレッスンです。
+コードによらない文書は[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.txt)に、コードの出力による文書は[R Markdown][r-markdown] によって書かれています。
+詳細については[Introduction to The Carpentries Workbench](https://carpentries.github.io/sandpaper-docs/) を参照してください。
 
-What you need to know is that there are three sections required for a valid Carpentries lesson template:
+有効なCarpentriesレッスンテンプレートには3つのセクションが必要です：
 
- 1. `questions` are displayed at the beginning of the episode to prime the learner for the content.
- 2. `objectives` are the learning objectives for an episode displayed with the questions.
- 3. `keypoints` are displayed at the end of the episode to reinforce the objectives.
+ 1. 最初に参加者がこれから学ぶことに慣れるために`questions`（「質問」）があります。
+ 2. `objectives`（目的）とは、そのエピソードにおいて学んで欲しいことの目的で、質問と並べて表示されます。
+ 3. `keypoints`（キーポイント）はエピソードの最後に目的を強調するために表示されます。
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
-Inline instructor notes can help inform instructors of timing challenges associated with the lessons.
-They appear in the "Instructor View"
+インストラクターへのメモはインストラクターにタイミングなどによるよく出るトラブルを教えてくれます。
+"Instructor View"の表示を選択すると見えます。
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-## Challenge 1: Can you do it?
+## チャレンジの１：出来ますか？
 
 What is the output of this command?
 
@@ -48,7 +48,7 @@ paste("This", "new", "lesson", "looks", "good")
 
 :::::::::::::::::::::::: solution 
 
-## Output
+## 出力
  
 ```output
 [1] "This new lesson looks good"
@@ -57,48 +57,48 @@ paste("This", "new", "lesson", "looks", "good")
 :::::::::::::::::::::::::::::::::
 
 
-## Challenge 2: how do you nest solutions within challenge blocks?
+## チャレンジの２：答えをどうやってチャレンジブロックの中に入れられますか？
 
 :::::::::::::::::::::::: solution 
 
-You can add a line with at least three colons and a `solution` tag.
+三つのコロン以上から始まって、「solution」で終わる行を入れば良い。
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Figures
+## 図表
 
-You can also include figures generated from R Markdown:
+Rマークダウンによる図表を入れることも出来ます。
 
-```{r pyramid, fig.alt = "pie chart illusion of a pyramid", fig.cap = "Sun arise each and every morning"}
+```{r pyramid, fig.alt = "ピラミッドの錯覚", fig.cap = "毎朝お日様が登ります"}
 pie(
-  c(Sky = 78, "Sunny side of pyramid" = 17, "Shady side of pyramid" = 5),
+  c(Sky = 78, "ピラミッドの明るい方" = 17, "ピラミッドの影に入っている方" = 5),
   init.angle = 315,
   col = c("deepskyblue", "yellow", "yellow3"),
   border = FALSE
 )
 ```
 
-Or you can use standard markdown for static figures with the following syntax:
+または、次の構文でコードによらない図形には標準的なマークダウンが使えます。
 
-`![optional caption that appears below the figure](figure url){alt='alt text for accessibility purposes'}`
+`![キャプション](図のURL){alt='アクセシビリティのための代替テキスト'}`
 
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
+![カーペントリーズへようこそ！](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='文字のない青いカーペントリーズのロゴマーク'}
 
-## Math
+## 数式の書き方
 
 One of our episodes contains $\LaTeX$ equations when describing how to create dynamic reports with {knitr}, so we now use mathjax to describe this:
 
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
+`$\alpha = \dfrac{1}{(1 - \beta)^2}$は次のようになります: $\alpha = \dfrac{1}{(1 - \beta)^2}$
 
-Cool, right?
+カッコイイでしょう？
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
+- 静的なコンテンツが必要な場合はエピソードに`.md`ファイルを使用します
+- 出力を生成する必要がある場合はエピソードに`.Rmd`ファイルを使用します
+- `sandpaper::check_lesson()` を実行してレッスンの問題を確認します
+- `sandpaper::build_lesson()` を実行して、レッスンをローカルでプレビューしましょう
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
