@@ -1,0 +1,19 @@
+files:
+  - source: episodes/*md
+    translation: '%original_path%/%original_file_name%'
+  - source: instructors/*.md
+    translation: '%original_path%/%original_file_name%'
+  - source: learners/*.md
+    translation: '%original_path%/%original_file_name%'
+  - source: profiles/*.md
+    translation: '%original_path%/%original_file_name%'
+  - source: CODE_OF_CONDUCT.md
+    translation: '%original_path%/%original_file_name%'
+  - source: CONTRIBUTING.md
+    translation: '%original_path%/%original_file_name%'
+  - source: LICENSE.md
+    translation: '%original_path%/%original_file_name%'
+  - source: links.md
+    translation: '%original_path%/%original_file_name%'
+  - source: README.md
+    translation: '%original_path%/%original_file_name%'
