@@ -19,3 +19,5 @@ files:
     translation: '%original_path%/%original_file_name%'
   - source: index.md
     translation: '%original_path%/%original_file_name%'
+  - source: config.yaml
+    translation: '%original_path%/%original_file_name%'
