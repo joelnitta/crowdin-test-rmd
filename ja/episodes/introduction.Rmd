@@ -1,0 +1,105 @@
+---
+title: "RMarkdownの使い方"
+teaching: 10
+exercises: 2
+---
+
+:::::::::::::::::::::::::::::::::::::: questions 
+
+- R Markdown と `{sandpaper} `を使ってレッスンを書くにはどうすればいいですか？
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: objectives
+
+- 新しいレッスンテンプレートにおいてマークダウンの使用方法を説明する
+- コード、図、ネストされたチャレンジブロックの使い方を説明すること
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## はじめに
+
+これはThe Carpenties Workbenchによって作成されたレッスンです。
+コードによらない文書は[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.txt)に、コードの出力による文書は[R Markdown][r-markdown] によって書かれています。
+詳細については[Introduction to The Carpentries Workbench](https://carpentries.github.io/sandpaper-docs/) を参照してください。
+
+有効なCarpentriesレッスンテンプレートには3つのセクションが必要です：
+
+ 1. 最初に参加者がこれから学ぶことに慣れるために`questions`（「質問」）があります。
+ 2. `objectives`（目的）とは、そのエピソードにおいて学んで欲しいことの目的で、質問と並べて表示されます。
+ 3. `keypoints`（キーポイント）はエピソードの最後に目的を強調するために表示されます。
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
+
+インストラクターへのメモはインストラクターにタイミングなどによるよく出るトラブルを教えてくれます。
+"Instructor View"の表示を選択すると見えます。
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: challenge 
+
+## チャレンジの１：出来ますか？
+
+What is the output of this command?
+
+```r
+paste("This", "new", "lesson", "looks", "good")
+```
+
+:::::::::::::::::::::::: solution 
+
+## 出力
+ 
+```output
+[1] "This new lesson looks good"
+```
+
+:::::::::::::::::::::::::::::::::
+
+
+## チャレンジの２：答えをどうやってチャレンジブロックの中に入れられますか？
+
+:::::::::::::::::::::::: solution 
+
+三つのコロン以上から始まって、「solution」で終わる行を入れば良い。
+
+:::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## 図表
+
+Rマークダウンによる図表を入れることも出来ます。
+
+```{r pyramid, fig.alt = "ピラミッドの錯覚", fig.cap = "毎朝お日様が登ります"}
+pie(
+  c(Sky = 78, "ピラミッドの明るい方" = 17, "ピラミッドの影に入っている方" = 5),
+  init.angle = 315,
+  col = c("deepskyblue", "yellow", "yellow3"),
+  border = FALSE
+)
+```
+
+または、次の構文でコードによらない図形には標準的なマークダウンが使えます。
+
+`![キャプション](図のURL){alt='アクセシビリティのための代替テキスト'}`
+
+![カーペントリーズへようこそ！](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='文字のない青いカーペントリーズのロゴマーク'}
+
+## 数式の書き方
+
+One of our episodes contains $\LaTeX$ equations when describing how to create dynamic reports with {knitr}, so we now use mathjax to describe this:
+
+`$\alpha = \dfrac{1}{(1 - \beta)^2}$は次のようになります: $\alpha = \dfrac{1}{(1 - \beta)^2}$
+
+カッコイイでしょう？
+
+::::::::::::::::::::::::::::::::::::: keypoints 
+
+- 静的なコンテンツが必要な場合はエピソードに`.md`ファイルを使用します
+- 出力を生成する必要がある場合はエピソードに`.Rmd`ファイルを使用します
+- `sandpaper::check_lesson()` を実行してレッスンの問題を確認します
+- `sandpaper::build_lesson()` を実行して、レッスンをローカルでプレビューしましょう
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+[r-markdown]: https://rmarkdown.rstudio.com/
