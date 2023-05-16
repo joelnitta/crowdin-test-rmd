@@ -2,6 +2,7 @@
 episodes/*html
 site/*
 !site/README.md
+*/site/*
 
 # History files
 .Rhistory
@@ -51,3 +52,4 @@ po/*~
 
 # renv detritus
 renv/sandbox/
+ja/renv
