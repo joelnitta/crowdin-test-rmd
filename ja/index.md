@@ -2,7 +2,7 @@
 site: sandpaper::sandpaper_site
 ---
 
-This is a new lesson built with [The Carpentries Workbench][workbench].
+これは、 [The Carpentries Workbench][workbench] で作成された新しいレッスンです。
 
 
 [workbench]: https://carpentries.github.io/sandpaper-docs
