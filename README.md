@@ -1,6 +1,6 @@
 # The Carpentries Workbench Test Translation
 
-This lesson is a test of translating a [The Carpentries Workbench][workbench] lesson using [crowdin].
+This lesson is a test of translating a [The Carpentries Workbench][workbench] lesson using [crowdin](https://crowdin.com).
 
 The crowdin project is located at <https://crowdin.com/project/crowdin-rmd-test>. It is a public project, so anybody can contribute to translations.
 
