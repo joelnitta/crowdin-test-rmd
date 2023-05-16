@@ -70,7 +70,10 @@ You can add a line with at least three colons and a `solution` tag.
 
 You can also include figures generated from R Markdown:
 
-```{r pyramid, fig.alt = "pie chart illusion of a pyramid", fig.cap = "Sun arise each and every morning"}
+```{r pyramid}
+#| label: pyramid
+#| fig.alt: "pie chart illusion of a pyramid"
+#| fig.cap: "Sun arise each and every morning"
 pie(
   c(Sky = 78, "Sunny side of pyramid" = 17, "Shady side of pyramid" = 5),
   init.angle = 315,
